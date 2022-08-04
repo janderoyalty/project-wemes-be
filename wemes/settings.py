@@ -100,8 +100,8 @@ DATABASES = {
         'NAME': 'wemes_db',
         # 'USER': '',
         # 'PASSWORD': '',
-        # 'HOST': 'localhost',
-        # 'PORT': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -162,4 +162,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # "http://127.0.0.1:8000",
 # ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
