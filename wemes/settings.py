@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "wemes",
     "rest_framework",
     'qrcode',
-    'corsheaders',
+    # 'corsheaders',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
