@@ -18,7 +18,7 @@ class User(models.Model):
         return f"{self.first_name} {self.last_name}"
 
     def save(self, *args, **kwargs):
-        qr_image = qrcode.make(f'http://127.0.0.1:8000/users/{self.id}/')
+        qr_image = qrcode.make(f'./users/{self.id}/')
         qr_offset = Image.new('RGB', (350,350), 'white')
         qr_offset.paste(qr_image)
         file_name = f'{self.last_four}-{self.first_name}_{self.last_name}qr.png'
