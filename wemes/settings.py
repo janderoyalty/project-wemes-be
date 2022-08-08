@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     "wemes",
     "rest_framework",
     'qrcode',
-    # 'corsheaders',
+    'corsheaders',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -159,4 +159,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # "http://127.0.0.1:8000",
 # ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
