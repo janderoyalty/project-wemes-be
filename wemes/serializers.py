@@ -21,7 +21,7 @@ class ItemSerializer(serializers.ModelSerializer):
     }
     class Meta:
         model = Item
-        fields = ['id', 'drop_off', 'due_date', 'transaction', 'type', 'color', "is_shoe", "follow_up", "description", 'qr_code']
+        fields = ['id', 'drop_off', 'due_date', 'transaction', 'type', 'color', "is_shoe", "follow_up", "description"]
 
 class TypeSerializer(serializers.ModelSerializer):
     class Meta:
