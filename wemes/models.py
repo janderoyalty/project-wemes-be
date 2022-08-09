@@ -11,22 +11,22 @@ class User(models.Model):
     last_four = models.IntegerField()
     email = models.CharField(max_length=200, blank=True)
     admin = models.BooleanField(default=False)
-    code = models.ImageField(blank=True, upload_to="static")
+    # code = models.ImageField(blank=True, upload_to="media")
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
-    def save(self, *args, **kwargs):
-        qr_image = qrcode.make(f'./users/{self.id}/')
-        qr_offset = Image.new('RGB', (350,350), 'white')
-        qr_offset.paste(qr_image)
-        file_name = f'{self.last_four}-{self.first_name}_{self.last_name}qr.png'
-        stream = BytesIO()
-        qr_offset.save(stream, 'PNG')
-        self.code.save(file_name, File(stream), save=False)
-        qr_offset.close()
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     qr_image = qrcode.make(f'./users/{self.id}/')
+    #     qr_offset = Image.new('RGB', (350,350), 'white')
+    #     qr_offset.paste(qr_image)
+    #     file_name = f'{self.last_four}-{self.first_name}_{self.last_name}qr.png'
+    #     stream = BytesIO()
+    #     qr_offset.save(stream, 'PNG')
+    #     self.code.save(file_name, File(stream), save=False)
+    #     qr_offset.close()
+    #     super().save(*args, **kwargs)
 
 class Transaction(models.Model):
     drop_off = models.DateField(blank=True)
