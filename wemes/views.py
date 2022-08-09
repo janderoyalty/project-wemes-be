@@ -29,7 +29,7 @@ class TypeViewSet(viewsets.ModelViewSet):
     serializer_class = TypeSerializer
     permission_class = [permissions.IsAuthenticated]
 
-class QRCodeViewSet(viewsets.ModelViewSet):
-    queryset = QRCode.objects.all()
-    serializer_class = QRCodeSerializer
-    permission_class = [permissions.IsAuthenticated]
+# class QRCodeViewSet(viewsets.ModelViewSet):
+#     queryset = QRCode.objects.all()
+#     serializer_class = QRCodeSerializer
+#     permission_class = [permissions.IsAuthenticated]
