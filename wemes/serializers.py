@@ -4,7 +4,7 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'last_name', 'phone_num', 'last_four', 'email', 'admin', 'is_active', 'transactions',]
+        fields = ['id', 'first_name', 'last_name', 'phone_num', 'last_four', 'email', 'admin', 'is_active', 'transactions']
 
 class TransactionSerializer(serializers.ModelSerializer):
     parent_lookup_kwargs = {
@@ -21,7 +21,7 @@ class ItemSerializer(serializers.ModelSerializer):
     }
     class Meta:
         model = Item
-        fields = ['id', 'drop_off', 'due_date', 'transaction', 'type', 'color', "is_shoe", "follow_up", "description", 'qr_code']
+        fields = ['id', 'drop_off', 'due_date', 'transaction', 'type', 'color', "is_shoe", "follow_up", "description"]
 
 class TypeSerializer(serializers.ModelSerializer):
     class Meta:
