@@ -4,10 +4,10 @@ from .serializers import *
 from .models import *
 
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_class = [permissions.IsAuthenticated]
+# class UserViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#     permission_class = [permissions.IsAuthenticated]
 
 class TransactionViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
