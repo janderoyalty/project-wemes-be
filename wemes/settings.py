@@ -7,6 +7,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+
+
+from distutils.command import config
+from distutils import config
+from logging import config
+
 from pathlib import Path
 import os
 import dj_database_url
@@ -22,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$a(j*%1q7d0dpbjhjy^)x7l0#qijsguvp8x!le$yx%4p2%qkh9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = ['127.0.0.1', 'wemes-be.herokuapp.com', 'localhost', '0.0.0.0']
 
