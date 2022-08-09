@@ -4,7 +4,7 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'last_name', 'phone_num', 'last_four', 'email', 'admin', 'is_active', 'transactions', 'code']
+        fields = ['id', 'first_name', 'last_name', 'phone_num', 'last_four', 'email', 'admin', 'is_active', 'transactions',]
 
 class TransactionSerializer(serializers.ModelSerializer):
     parent_lookup_kwargs = {
@@ -33,7 +33,7 @@ class ColorSerializer(serializers.ModelSerializer):
         model = Color
         fields = ['id', 'name']
 
-class QRCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = QRCode
-        fields = ['id', 'number', 'code']
+# class QRCodeSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = QRCode
+#         fields = ['id', 'number', 'code']
