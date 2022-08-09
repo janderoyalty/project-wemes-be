@@ -1,8 +1,8 @@
 from django.db import models
-import qrcode
-from io import BytesIO
-from django.core.files import File
-from PIL import Image
+# import qrcode
+# from io import BytesIO
+# from django.core.files import File
+# from PIL import Image
 
 class User(models.Model):
     first_name = models.CharField(max_length=200)
@@ -49,23 +49,23 @@ class Color(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class QRCode(models.Model):
-    number = models.IntegerField()
-    code = models.ImageField(blank=True, upload_to="code")
+# class QRCode(models.Model):
+#     number = models.IntegerField()
+#     code = models.ImageField(blank=True, upload_to="code")
 
-    def __str__(self):
-        return f"{self.number}"
+#     def __str__(self):
+#         return f"{self.number}"
 
-    def save(self, *args, **kwargs):
-        qr_image = qrcode.make(f'http://127.0.0.1:8000/users/{self.number}/')
-        qr_offset = Image.new('RGB', (350,350), 'white')
-        qr_offset.paste(qr_image)
-        file_name = f'item_{self.number}_qr.png'
-        stream = BytesIO()
-        qr_offset.save(stream, 'PNG')
-        self.code.save(file_name, File(stream), save=False)
-        qr_offset.close()
-        super().save(*args, **kwargs)
+#     def save(self, *args, **kwargs):
+#         qr_image = qrcode.make(f'http://127.0.0.1:8000/users/{self.number}/')
+#         qr_offset = Image.new('RGB', (350,350), 'white')
+#         qr_offset.paste(qr_image)
+#         file_name = f'item_{self.number}_qr.png'
+#         stream = BytesIO()
+#         qr_offset.save(stream, 'PNG')
+#         self.code.save(file_name, File(stream), save=False)
+#         qr_offset.close()
+#         super().save(*args, **kwargs)
 
 class Item(models.Model):
     drop_off = models.DateField(blank=True)
@@ -73,7 +73,7 @@ class Item(models.Model):
     is_shoe = models.BooleanField(default=True)
     follow_up = models.BooleanField(default=False)
     transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE, null=True, related_name="items")
-    qr_code = models.ForeignKey(QRCode, on_delete=models.SET_NULL, null=True)
+    # qr_code = models.ForeignKey(QRCode, on_delete=models.SET_NULL, null=True)
     type = models.ForeignKey(Type, on_delete=models.SET_NULL, null=True)
     color = models.ForeignKey(Color, on_delete=models.SET_NULL, null=True)
     description = models.TextField(blank=True)
