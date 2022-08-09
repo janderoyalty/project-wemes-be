@@ -11,8 +11,8 @@ class User(models.Model):
     last_four = models.IntegerField()
     email = models.CharField(max_length=200, blank=True)
     admin = models.BooleanField(default=False)
-    # code = models.ImageField(blank=True, upload_to="media")
     is_active = models.BooleanField(default=True)
+    # code = models.ImageField(blank=True, upload_to="media")
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

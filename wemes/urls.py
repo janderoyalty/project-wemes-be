@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 from rest_framework import routers
 from rest_framework_nested import routers as n_routers
+
 from wemes import views
 
 router = routers.DefaultRouter()
